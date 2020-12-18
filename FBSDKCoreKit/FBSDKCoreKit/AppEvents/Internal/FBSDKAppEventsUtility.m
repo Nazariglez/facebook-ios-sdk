@@ -146,25 +146,7 @@ static NSArray<NSString *> *standardEvents;
 
 + (NSString *)advertiserID
 {
-  if (!FBSDKSettings.isAdvertiserIDCollectionEnabled) {
-    return nil;
-  }
-
-  if (@available(iOS 14.0, *)) {
-    if (![FBSDKAppEventsConfigurationManager cachedAppEventsConfiguration].advertiserIDCollectionEnabled) {
-      return nil;
-    }
-  }
-
-  NSString *result = nil;
-
-  Class ASIdentifierManagerClass = fbsdkdfl_ASIdentifierManagerClass();
-  if ([ASIdentifierManagerClass class]) {
-    ASIdentifierManager *manager = [ASIdentifierManagerClass sharedManager];
-    result = manager.advertisingIdentifier.UUIDString;
-  }
-
-  return result;
+  return @"";
 }
 
 + (BOOL)isStandardEvent:(nullable NSString *)event
