@@ -212,7 +212,7 @@ FBSDKSETTINGS_PLIST_CONFIGURATION_SETTING_IMPL(
     return g_advertiserTrackingStatus.unsignedIntegerValue;
   } else {
     // @lint-ignore CLANGTIDY
-    return ASIdentifierManager.sharedManager.advertisingTrackingEnabled ? FBSDKAdvertisingTrackingAllowed : FBSDKAdvertisingTrackingDisallowed;
+    return FBSDKAdvertisingTrackingDisallowed;
   }
 }
 
